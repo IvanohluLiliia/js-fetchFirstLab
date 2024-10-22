@@ -5,7 +5,19 @@
 
 
 function deleteUser(id) {
-  // Ваш код
+  return fetch(`https://jsonplaceholder.typicode.com/users/${id}`, {
+    method: 'DELETE'
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Помилка при видаленні користувача');
+    }
+    return response;
+  })
+  .catch(error => {
+    console.error('Помилка:', error);
+    return null;
+  });
 }
 
 console.log(deleteUser(1));
