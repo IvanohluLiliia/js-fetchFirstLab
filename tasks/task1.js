@@ -20,7 +20,7 @@ function fetchUsers() {
     })
     .catch(error => {
       console.error('Помилка:', error);
-      return []; // Повертаємо порожній масив у разі помилки
+      return []; 
     });
 }
 
